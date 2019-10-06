@@ -8,8 +8,17 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(),
-        body: _getText(),
+        body: _getBody(),
       ),
+    );
+  }
+
+  Widget _getBody() {
+    return ListView.builder(
+      itemCount: 5,
+      itemBuilder: (context, index) {
+        return _getText();
+      },
     );
   }
 
