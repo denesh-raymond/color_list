@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'color_data.dart';
+import 'detail_page.dart';
 
 void main() => runApp(MyApp());
 
@@ -33,6 +34,16 @@ class MyApp extends StatelessWidget {
         title: Text(
           list[index].title,
         ),
+        onTap: () => _onListItemTap(context, list[index]),
+      ),
+    );
+  }
+
+  void _onListItemTap(BuildContext context, ColorData colorData) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => DetailPage(colorData),
       ),
     );
   }
